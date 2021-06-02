@@ -22,31 +22,41 @@ namespace MiniProject_1715531_Harith
         {
             string path = @Directory.GetCurrentDirectory() + "\\path.txt";
             List<MechaStudent> findDetail = new List<MechaStudent>();
-            
+
             foreach (string line in File.ReadAllLines(path).ToList())
             {
 
-               string[] items = line.Split(',');
-               findDetail.Add(new MechaStudent() { ID = items[0], Matric = items[1], Name = items[2] });
-        
+                string[] items = line.Split(',');
+                findDetail.Add(new MechaStudent() {ID = items[0], Matric = items[1], Name = items[2]});
+
             }
+
             /*List<MechaStudent> FindStudent = findDetail.Where(x => x.Name == textBox1.Text).ToList();*/
             var query = findDetail.Where(x => x.Name.Contains(textBox1.Text))
-                .Select(x => new { name = x.Name, id = x.ID});
+                .Select(x => new {name = x.Name, id = x.ID, matric = x.Matric});
 
-
-
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (var name in query)
+            //check if IEnumerable is not empty
+            if (!query.Any())
             {
-                stringBuilder.Append(name.name + " " + name.id + "\n");
+                var stringBuilder = new StringBuilder();
+                foreach (var name in query)
+                {
+                    stringBuilder.Append(name.name + " " + name.id + " " + name.matric + "\n");
+                }
+
+                MessageBox.Show(stringBuilder.ToString());
             }
-            MessageBox.Show(stringBuilder.ToString());
+            else
+            {
+                MessageBox.Show("User Not Found!");
             }
 
-            
+
+
+
 
 
         }
     }
+}
 
