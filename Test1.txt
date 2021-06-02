@@ -1,0 +1,49 @@
+//Main aka Form1
+private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You want to add a person");
+            Form2 Form2 = new Form2();
+            Form2.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form Form3 = new Form();
+            Form3.Show();
+
+        }
+
+//Class
+class MechaStudent
+    {
+        public string ID;
+        public string Matric;
+        public string Name;
+
+    }
+
+//Form2
+private void button5_Click_1(object sender, EventArgs e)
+        {
+            string path = @"C:\Users\Harris\source\repos\MiniProject_1715531_Harith\path.txt";
+            string outFile = @"C:\Users\Harris\source\repos\MiniProject_1715531_Harith\outFile.txt";
+            
+            List<MechaStudent> students = new List<MechaStudent>();
+            students.Add(new MechaStudent() { ID = textBox1.Text , Name = textBox3.Text , Matric = textBox2.Text });
+            File.WriteAllText(path, textBox1.Text + " , " + textBox2.Text + " , " + textBox3.Text);
+
+            MessageBox.Show("Successfully added user " + textBox3.Text + " with ID " + textBox1.Text);
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+
+            List<string> outContents = new List<string>();
+          
+            for(var i = 0; i < students.Count(); i++)
+            {
+                string stuff = students[i].ID + " " + students[i].Matric + " " + students[i].Name;
+                outContents.Add(stuff);
+            }
+            File.WriteAllLines(outFile,outContents); 
+           
+        }
