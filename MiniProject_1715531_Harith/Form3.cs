@@ -20,8 +20,7 @@ namespace MiniProject_1715531_Harith
         }
         private void ReadStudentDetail()
         {
-            string path = @"C:\Users\Harris\source\repos\MiniProject_1715531_Harith\path.txt";
-            ListViewItem itm;
+            string path = @Directory.GetCurrentDirectory() + "\\path.txt";
             //List<string> lines = new List<string>();
             List<MechaStudent> studentDetail = new List<MechaStudent>();
 
@@ -32,7 +31,7 @@ namespace MiniProject_1715531_Harith
                 string[] items = line.Split(',');
                 ///string[] items = line.Split(new char[] { ',' },StringSplitOptions.RemoveEmptyEntries);
                /* MechaStudent data = new MechaStudent(items[0], items[1], items[2]);*/
-                itm = new ListViewItem(items);
+                var itm = new ListViewItem(items);
                 listView1.Items.Add(itm);
 
             }

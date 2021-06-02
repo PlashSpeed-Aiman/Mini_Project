@@ -36,7 +36,7 @@ namespace MiniProject_1715531_Harith
                 .Select(x => new {name = x.Name, id = x.ID, matric = x.Matric});
 
             //check if IEnumerable is not empty
-            if (!query.Any())
+            if (query.Any())
             {
                 var stringBuilder = new StringBuilder();
                 foreach (var name in query)
