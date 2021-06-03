@@ -27,7 +27,7 @@ namespace MiniProject_1715531_Harith
 
             foreach (string line in File.ReadAllLines(path).ToList())
             {
-
+                //MCT1,1729963,Aiman // [MCT1,1729963,Aiman] 
                 string[] items = line.Split(',');
                 ///string[] items = line.Split(new char[] { ',' },StringSplitOptions.RemoveEmptyEntries);
                /* MechaStudent data = new MechaStudent(items[0], items[1], items[2]);*/

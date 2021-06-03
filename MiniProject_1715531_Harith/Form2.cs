@@ -27,7 +27,7 @@ namespace MiniProject_1715531_Harith
             //string outFile = @"C:\Users\Harris\source\repos\MiniProject_1715531_Harith\outFile.txt";
             
             List<MechaStudent> students = new List<MechaStudent>();
-            
+            //Add student details inside of students List
             students.Add(new MechaStudent() { ID = textBox1.Text , Name = textBox3.Text , Matric = textBox2.Text });
 
             List<string> outContents = new List<string>();
@@ -38,8 +38,6 @@ namespace MiniProject_1715531_Harith
                 outContents.Add(stuff);
             }
             File.AppendAllLines(path, outContents);
-            
-
             MessageBox.Show("Successfully added user " + textBox3.Text + " with ID " + textBox1.Text);
             Clear_Text();
             

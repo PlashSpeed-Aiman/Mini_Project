@@ -30,9 +30,8 @@ namespace MiniProject_1715531_Harith
                 findDetail.Add(new MechaStudent() {ID = items[0], Matric = items[1], Name = items[2]});
 
             }
-
             /*List<MechaStudent> FindStudent = findDetail.Where(x => x.Name == textBox1.Text).ToList();*/
-            var query = findDetail.Where(x => x.Name.Contains(textBox1.Text))
+            var query = findDetail.Where(x => x.Name.Contains(textBox1.Text) && textBox1.Text != String.Empty)
                 .Select(x => new {name = x.Name, id = x.ID, matric = x.Matric});
 
             //check if IEnumerable is not empty
