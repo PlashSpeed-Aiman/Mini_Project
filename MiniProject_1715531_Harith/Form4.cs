@@ -33,7 +33,7 @@ namespace MiniProject_1715531_Harith
             bool not_Found = false;
             for (var k = 0; k<deleteDetail.Count(); k++)
             {
-                if (deleteDetail[k][0].Contains(textBox1.Text))
+                if (deleteDetail[k][0].Contains(textBox1.Text) && textBox1.Text != String.Empty)
                 {
                     deleteDetail.Remove(deleteDetail[k]);
                     MessageBox.Show("Successfully deleted user ID " + textBox1.Text);

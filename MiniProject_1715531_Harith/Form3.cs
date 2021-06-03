@@ -38,23 +38,25 @@ namespace MiniProject_1715531_Harith
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
-            string path = @"C:\Users\Harris\source\repos\MiniProject_1715531_Harith\path.txt";
-            ListViewItem itm;
-            List<string> lines = new List<string>();
-            List<MechaStudent> studentDetail = new List<MechaStudent>();
-       
-            foreach (string line in File.ReadAllLines(path).ToList())
-            {
-               
-                Console.WriteLine(line);
-                string[] items = line.Split(',');
-                ///string[] items = line.Split(new char[] { ',' },StringSplitOptions.RemoveEmptyEntries);
-/*                MechaStudent data = new MechaStudent(items[0], items[1], items[2]);
-*/                itm = new ListViewItem(items);
-                listView1.Items.Add(itm);
-              
-            }
+
+            // MessageBox.Show("Voor jezelf en andere. Ik ben een buitenlander!");
+
+//             string path = @"C:\Users\Harris\source\repos\MiniProject_1715531_Harith\path.txt";
+//             ListViewItem itm;
+//             List<string> lines = new List<string>();
+//             List<MechaStudent> studentDetail = new List<MechaStudent>();
+//        
+//             foreach (string line in File.ReadAllLines(path).ToList())
+//             {
+//                
+//                 Console.WriteLine(line);
+//                 string[] items = line.Split(',');
+//                 ///string[] items = line.Split(new char[] { ',' },StringSplitOptions.RemoveEmptyEntries);
+// /*                MechaStudent data = new MechaStudent(items[0], items[1], items[2]);
+// */                itm = new ListViewItem(items);
+//                 listView1.Items.Add(itm);
+//               
+//             }
             /*for (var j = 0; j<studentDetail.Count(); j++)
             {
                 listView1.Columns.Add("ID", studentDetail[j].ID);
